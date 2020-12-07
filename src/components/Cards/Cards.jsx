@@ -18,39 +18,58 @@ const Cards = () => {
     return (
 
         <div className={styles.container}>
-             {covidData.data &&
-            <Grid container spacing={3} justify='center'>
-               
-                <Grid item component={Card}>
-                    <CardContent>
-                        <Typography color='textSecondary' gutterBottom>{covidData.data.confirmed.value}</Typography>
-                        <Typography variant='h5'>new da</Typography>
-                        <Typography color='textSecondary'>date</Typography>
-                        <Typography variant='body2'>Number of Active Cases</Typography>
-                    </CardContent>
-                </Grid>
-    
+            {covidData.data &&
+                <Grid container spacing={3} justify='center'>
 
-                <Grid item component={Card}>
-                    <CardContent>
-                        <Typography color='textSecondary' gutterBottom>{covidData.data.recovered.value}</Typography>
-                        <Typography variant='h5'>Data</Typography>
-                        <Typography color='textSecondary'>date</Typography>
-                        <Typography variant='body2'>Number of Recoverd Cases</Typography>
-                    </CardContent>
-                </Grid>
+                    <Grid item component={Card}>
+                        <CardContent>
+                            <Typography color='textSecondary' gutterBottom>Confirmed</Typography>
+                            <Typography variant='h5'>
+                                <CountUp start={0}
+                                    end={covidData.data.confirmed.value}
+                                    duration={3}
+                                    separator=','
+                                >
+                                </CountUp>
+                            </Typography>
+                            <Typography color='textSecondary'>date</Typography>
+                            <Typography variant='body2'>Number of Active Cases</Typography>
+                        </CardContent>
+                    </Grid>
 
-                <Grid item component={Card}>
-                    <CardContent>
-                        <Typography color='textSecondary' gutterBottom>{covidData.data.deaths.value}</Typography>
-                        <Typography variant='h5'>Data</Typography>
-                        <Typography color='textSecondary'>date</Typography>
-                        <Typography variant='body2'>Number of Deaths Cases</Typography>
-                    </CardContent>
+                    <Grid item component={Card}>
+                        <CardContent>
+                            <Typography color='textSecondary' gutterBottom>Recoverd</Typography>
+                            <Typography variant='h5'>
+                                <CountUp
+                                    start={0}
+                                    end={covidData.data.recovered.value}
+                                    duration={3}
+                                    separator=','
+                                />
+                            </Typography>
+                            <Typography color='textSecondary'>date</Typography>
+                            <Typography variant='body2'>Number of Recoverd Cases</Typography>
+                        </CardContent>
+                    </Grid>
+
+                    <Grid item component={Card}>
+                        <CardContent>
+                            <Typography color='textSecondary' gutterBottom>Deaths</Typography>
+                            <Typography variant='h5'>
+                                <CountUp
+                                    start={0}
+                                    end={covidData.data.deaths.value}
+                                    duration={3}
+                                    separator=','
+                                />
+                            </Typography>
+                            <Typography color='textSecondary'>date</Typography>
+                            <Typography variant='body2'>Number of Deaths Cases</Typography>
+                        </CardContent>
+                    </Grid>
                 </Grid>
-                
-            </Grid>
-                }
+            }
         </div>
     )
 }
