@@ -7,7 +7,6 @@ function App() {
       <Cards/>
       <Chart/>
       <CountryPicker/>
-
     </div>
   );
 }
