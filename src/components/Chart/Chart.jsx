@@ -14,21 +14,21 @@ const Chart = () => {
         setDailyData(response.data)
     }, [])
 
-    console.log('dailyData: ');
-    console.log(dailyData);
+    // console.log('dailyData: ');
+    // console.log(dailyData);
 
 
-    const dates= dailyData.map(item =>item.reportDate)
-    const confirmed=dailyData.map(item =>item.totalConfirmed)
-    const deaths= dailyData.map(item =>item.deaths.total)
+    const dates = dailyData.map(item => item.reportDate)
+    const confirmed = dailyData.map(item => item.totalConfirmed)
+    const deaths = dailyData.map(item => item.deaths.total)
 
     const lineChart = (
-        dailyData&&
+        dailyData &&
         <Line
             data={{
                 labels: dates,
-                datasets: [{label:'confirmed',data:confirmed,fill:true,borderColor:'blue',backgroundColor:'rgba(0,0,255,0.5)'}, 
-                {label:'deaths',data:deaths,fill:true,backgroundColor:'rgba(255,0,0,0.5',borderColor:'red'}]
+                datasets: [{ label: 'confirmed', data: confirmed, fill: true, borderColor: 'blue', backgroundColor: 'rgba(0,0,255,0.5)' },
+                { label: 'deaths', data: deaths, fill: true, backgroundColor: 'rgba(255,0,0,0.5', borderColor: 'red' }]
             }}
         />
     )

@@ -5,8 +5,8 @@ function App() {
   return (
     <div className={styles.container}>
       <Cards/>
-      <Chart/>
       <CountryPicker/>
+      <Chart/>
     </div>
   );
 }

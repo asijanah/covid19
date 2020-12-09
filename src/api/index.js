@@ -17,5 +17,15 @@ const getDaily=async () => {
 
 export{
     getDaily
-}
+};
+
+const getCountries=async () => {
+    const response= await axios.get(`${url}/countries`);
+    const fetchData=await response.data.countries.map(country =>country.name);
+    return fetchData
+};
+
+export{
+    getCountries
+};
 
