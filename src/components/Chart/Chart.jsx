@@ -5,7 +5,7 @@ import { getDaily } from '../../api/index';
 import styles from './Chart.module.css';
 
 
-const Chart = () => {
+const Chart = (props) => {
 
     const [dailyData, setDailyData] = useState([])
 
@@ -22,6 +22,16 @@ const Chart = () => {
     const confirmed = dailyData.map(item => item.totalConfirmed)
     const deaths = dailyData.map(item => item.deaths.total)
 
+
+
+    // const barChart=(
+    //     props.country&&
+    //     <Bar 
+    //     data={{
+    //         label:props.country
+    //     }}
+    // )
+
     const lineChart = (
         dailyData &&
         <Line
@@ -36,9 +46,14 @@ const Chart = () => {
 
 
     return (
+        <>
         <div className={styles.container}>
             {lineChart}
         </div>
+        {/* <div className={styles.container}>
+            {barChart}
+        </div> */}
+        </>
     )
 }
 export default Chart

@@ -29,3 +29,12 @@ export{
     getCountries
 };
 
+const getCountryDetails=async (country) => {
+    const response= await axios.get(`${url}/countries/${country}`);
+    return response
+};
+
+export{
+    getCountryDetails
+};
+

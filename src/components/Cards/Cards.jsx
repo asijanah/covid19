@@ -6,7 +6,7 @@ import cx from 'classnames';
 import styles from './Cards.module.css'
 import { getCovid } from '../../api/index'
 
-const Cards = () => {
+const Cards = (z) => {
     const [covidData, setCovidData] = useState([]);
 
     useEffect(async () => {
